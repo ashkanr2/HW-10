@@ -1,0 +1,44 @@
+﻿@model List<Product>
+<div class="table-responsive text-center">
+    <a class="btn btn-warning btn-block btn-lg" asp-controller="Product" asp-action="List">بازگشت به محصولات </a>
+    <table class="table table-bordered table-striped table-hover">
+        <thead class="table-primary">
+            <tr>
+                
+                <td>Name</td>
+                <td>Price</td>
+                <td>Number</td>
+                <td>Action</td>
+              
+
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in @Model)
+            {
+                if (item.PersonId != null)
+                {
+                    <tr>
+                        
+                        <td>@item.Name</td>
+                        <td>@item.Price</td>
+                        <td>@item.Number2</td>
+                        <td>
+                            <a class="btn btn-primary btn-block btn-lg" asp-controller="Order" asp-action="Delete" asp-route-Id="@item.Id">حذف از سبد </a>
+                            @if (item.Number2 >= 1)
+                            {
+                              <a class="btn btn-primary btn-block btn-lg" asp-controller="Order" asp-action="Delete2" asp-route-Id="@item.Id">کم کردن از سبد </a>
+                      
+                            }
+                             </td>
+
+
+                    </tr>
+                }
+                
+
+            }
+        </tbody>
+    </table>
+
+</div>

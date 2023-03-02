@@ -1,0 +1,50 @@
+﻿
+<!DOCTYPE html>
+<html lang="fa"dir="rtl">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - _10</title>
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/_10.styles.css" asp-append-version="true" />
+</head>
+<body>
+    <header>
+        <nav class="navbar navbar-light flex-container" style="background-color: #e3f2fd; ">
+                
+                <div class="d-flex">
+                    <ul class="d-flex">
+                        <li class="nav-item d-flex">
+                            <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Index">صفحه اصلی</a>
+                        </li>
+                   
+                    <li class="nav-item d-flex">
+                        <a class="nav-link text-dark" asp-area="" asp-controller="Account" asp-action="Login">ورود</a>
+                        </li>
+                         <li class="nav-item d-flex">
+                        <a class="nav-link text-dark" asp-area="" asp-controller="Account" asp-action="AccountList">لیست کاربران </a>
+                    </li>
+                        <li class="nav-item d-flex">
+                            <a class="nav-link text-dark" asp-area="" asp-controller="Product" asp-action="List">لیست کالاها</a>
+                        </li>
+                    <li class="nav-item d-flex">
+                        <a class="nav-link text-dark" asp-area="" asp-controller="Order" asp-action="List">مشاهده سبد خرید </a>
+                    </li>
+                    </ul>
+                </div>
+        </nav>
+    </header>
+    <div class="container">
+        <main role="main" class="pb-3">
+            @RenderBody()
+        </main>
+    </div>
+
+    
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="~/js/site.js" asp-append-version="true"></script>
+    @await RenderSectionAsync("Scripts", required: false)
+</body>
+</html>
